@@ -2,9 +2,15 @@ const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
+const cors = require("cors");
+
+app.use(cors({origin: null}));
 
 // Отслеживание url адреса и отображение нужной HTML страницы
 
+app.get('/', function(request, respons) {
+	respons.sendFile(__dirname + '/index.html');
+});
 // Массив со всеми подключениями
 connections = [];
 
@@ -32,5 +38,5 @@ io.on('connection', function(socket) {
 });
 
 http.listen(5000, () => {
-   console.log("Server started on port 3000");
+   console.log("Server started on port 5000");
 });
