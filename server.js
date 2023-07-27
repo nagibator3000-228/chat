@@ -4,7 +4,7 @@ const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 const cors = require("cors");
 
-app.use(cors({origin: null}));
+app.use(cors({origin: 'localhost'}));
 
 // Отслеживание url адреса и отображение нужной HTML страницы
 
