@@ -4,14 +4,7 @@ const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 const cors = require("cors");
 
-app.use(cors({origin: null}));
-app.use((req, res, next) => {
-	res.setHeader('Access-Control-Allow-Origin', null);
-	res.setHeader('Access-Control-Allow-Methods', '');
-	res.setHeader('Access-Control-Allow-Headers', '');
-	next();
-});
- 
+app.use(cors({origin: 'https://example.com'}));
 
 // Отслеживание url адреса и отображение нужной HTML страницы
 
