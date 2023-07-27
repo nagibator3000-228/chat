@@ -4,9 +4,6 @@ const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
 // Отслеживание url адреса и отображение нужной HTML страницы
-app.get('/', function(request, respons) {
-	respons.sendFile(__dirname + '/index.html');
-});
 
 // Массив со всеми подключениями
 connections = [];
